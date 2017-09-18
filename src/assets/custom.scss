@@ -1,0 +1,79 @@
+/*================ Global Variables ================*/
+
+// Font weights
+$light: 300;
+$regular: 400;
+$semi-bold: 700;
+$bold: 900;
+
+// New Colors
+$red: #FF5352;
+$red-dark: #F44336;
+$red-disabled: #FFCDD2;
+$blue: #78B6D7;
+$blue-dark: #1C8FCD;
+$blue-lite: hsla(0,0,100,.5);
+$cream: #F5F2F0;
+$cream-dark: #EFEBE9;
+$choco: #CDBFBA;
+$chocolate: #A2887E;
+$chocolate-text: #5D4037;
+$chocolate-bg: #4E342E;
+$chocolate-dark: #3C2C29;
+$gray: #ccc;
+$light-gray: #eee;
+
+// Base Font
+$font-sans: 'Lato', helvetica, verdana, sans-serif;
+$font-serif: 'Noto Serif', georgia, times, serif;
+$base-font-weight: $regular;
+$base-font-size: 16px;
+$base-line-height: 1.6;
+
+// Menu
+$menu-height: 55px;
+
+/*================ Wrapper Styles ================*/
+.wrapper {
+  max-width: 1200px;
+  padding-right: 0;
+  padding-left: 0;
+}
+
+/*================ NavBar Styles ================*/
+.nav-bar {
+  background-color: white;
+  .wrapper {
+    border-top: 1px solid $choco;
+    border-bottom: 1px solid $choco;
+    padding: 0;
+  }
+  .site-nav {
+    margin: 0;
+  }
+  a {
+    color: $chocolate;
+    padding: 0 20px;
+    height: $menu-height;
+    line-height: $menu-height;
+    letter-spacing: .75px;
+  }
+  .site-nav--active {
+    a {
+      border-bottom: 4px solid $blue;
+      color: $blue;
+    }
+  }
+}
+
+/*================ Top-Bar Styles ================*/
+.top-bar {
+  background: $blue;
+  height: 40px;
+  .nav-social {
+    margin: 0;
+    li {
+      margin: 0 10px;
+    }
+  }
+}
