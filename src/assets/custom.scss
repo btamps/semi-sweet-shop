@@ -31,49 +31,212 @@ $base-font-size: 16px;
 $base-line-height: 1.6;
 
 // Menu
-$menu-height: 55px;
+$menu-height: 50px;
 
+body {
+  padding-top: 50px;
+}
 /*================ Wrapper Styles ================*/
 .wrapper {
   max-width: 1200px;
-  padding-right: 0;
-  padding-left: 0;
+}
+
+.site-header {
+  padding: 20px 0 0 0;
 }
 
 /*================ NavBar Styles ================*/
 .nav-bar {
-  background-color: white;
+  background-color: $blue;
   .wrapper {
-    border-top: 1px solid $choco;
-    border-bottom: 1px solid $choco;
     padding: 0;
   }
   .site-nav {
-    margin: 0;
+    margin: 0 15px;
+    border-top: 1px solid $blue-lite;
+    border-bottom: 1px solid $blue-lite;
+  }
+  li {
+    border-color: $blue-lite;
+    &:hover {
+      background-color: $blue-dark;
+    }
   }
   a {
-    color: $chocolate;
+    color: white;
     padding: 0 20px;
     height: $menu-height;
     line-height: $menu-height;
     letter-spacing: .75px;
   }
-  .site-nav--active {
-    a {
-      border-bottom: 4px solid $blue;
-      color: $blue;
-    }
-  }
 }
 
 /*================ Top-Bar Styles ================*/
 .top-bar {
+  display: none;
   background: $blue;
   height: 40px;
   .nav-social {
     margin: 0;
-    li {
-      margin: 0 10px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: right;
+    &:before {
+      content: "Follow";
+      color: white;
+      font-weight: 700;
     }
+    li {
+      margin: 0 5px;
+      display: inline;
+      line-height: 40px;
+      a {
+        display: inline-block;
+        color: white;
+        border-radius: 2rem;
+        width: 30px;
+        height: 30px;
+        line-height: 32px;
+        font-size: 18px;
+        text-align: center;
+        padding: 0;
+        &:hover {
+          color: $blue !important;
+          background: white !important;
+        }
+      }
+    }
+  }
+}
+
+.header-logo {
+  margin: 0;
+}
+
+.branding  {
+  .logo {
+    display: inline-block;
+    text-indent: -200%;
+    overflow: hidden;
+    width: 100%;
+    height: 60px;
+    margin: 20px auto 10px;
+    background: url(ss-logo.svg) no-repeat center center;
+    background-size: auto 100%;
+  }
+  p {
+    color: $chocolate;
+    font-size: 17px;
+    text-align: center;
+  }
+}
+
+/*================ Search Bar Styles ================*/
+.search-bar input[type="text"], .search-bar input[type="search"],
+.site-header .search-bar input[type="text"], .site-header .search-bar input[type="search"] {
+  font-size: 16px;
+  border: 1px solid white;
+  border-radius: 3px;
+  color: white;
+  background-color: transparent;
+}
+
+.main-content .search-bar input {
+  border-color: $choco;
+  color: $chocolate;
+}
+.site-header .search-bar input[type="text"]:hover, .site-header .search-bar input[type="text"]:focus, .site-header .search-bar input[type="search"]:hover, .site-header .search-bar input[type="search"]:focus {
+  background-color: transparent;
+}
+
+.search-bar {
+  max-width: 100%;
+  input {
+		&::-webkit-input-placeholder {
+		  color: $choco; }
+
+		&:-moz-placeholder {
+		  /* Firefox 18- */
+		  color: $choco; }
+
+		&::-moz-placeholder {
+		  /* Firefox 19+ */
+		  color: $choco; }
+
+		&:-ms-input-placeholder {
+		  color: $choco; }
+  }
+  .icon-search {
+    color: $chocolate;
+  }
+}
+
+.header-cart-btn {
+  background-color: lighten($choco,15%);
+  color: $chocolate;
+  .cart-count {
+    background-color: $blue;
+  }
+}
+
+#mobileNavBar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: $blue;
+}
+
+@media (min-width: 768px) {
+  body {
+    padding-top: 0;
+  }
+  .site-header {
+    padding: 30px 0 0 0;
+  }
+  .nav-bar {
+    background-color: white;
+    .site-nav {
+      border-color: $choco;
+      margin: 0 30px;
+    }
+    li:hover {
+      background: transparent;
+    }
+    a {
+      color: $chocolate;
+      &:hover {
+        color: $blue;
+      }
+    }
+    .site-nav--active {
+      a {
+        border-bottom: 4px solid $blue;
+        color: $blue;
+      }
+    }
+  }
+  .top-bar {
+    display: block;
+  }
+  .branding {
+    .logo {
+      width: 306px;
+      height: 74px;
+      margin: 10px 0 5px;
+    }
+    p {
+      text-align: left;
+      font-weight: $semi-bold;
+      margin-bottom: 20px;
+    }
+  }
+  .search-bar {
+    max-width: 50%;
+  }
+  .search-bar input[type="text"], .search-bar input[type="search"],
+  .site-header .search-bar input[type="text"], .site-header .search-bar input[type="search"] {
+    border-color: $choco;
+    color: $chocolate;
   }
 }
