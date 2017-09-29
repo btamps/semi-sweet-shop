@@ -8,64 +8,53 @@
 {% endcomment %}
 
 {% if section.settings.collection_sidebar_filters == 'groups' %}
-  {% if collection.all_tags.size > 0 %}
 
-    <div class="grid-uniform">
-      {% comment %}
-        Loop through tag categories
-      {% endcomment %}
-      {% for cat_item in cat_array %}
-        <div class="grid-item small--one-half medium--one-third">
-          <h2 class="h3">{{ cat_item }}</h2>
-          <ul class="advanced-filters">
-            {% comment %}
-              Loop through collection tags
-            {% endcomment %}
-            {% for tag in collection.all_tags %}
-              {% assign cat = tag | split: '_' | first %}
-              {% if cat != tag and cat_item == cat %}
-                {% comment %}
-                  Strip out tag category prefix and add/remove link for tag filtering
-                {% endcomment %}
-                {% if current_tags contains tag %}
-                  <li class="advanced-filter active-filter" data-group="{{ cat_item }}" data-handle="{{ tag | handle }}">{{ tag | remove_first: cat_item | remove_first: '_' | link_to_remove_tag: tag }}</li>
-                {% else %}
-                  <li class="advanced-filter" data-group="{{ cat_item }}" data-handle="{{ tag | handle }}">{{ tag | remove_first: cat_item | remove_first: '_' | link_to_add_tag: tag }}</li>
-                {% endif %}
-              {% endif %}
-            {% endfor %}
-          </ul>
-        </div>
-      {% endfor %}
-    </div>
+  <h2 class="h3">Cookie Cutters</h2>
+  <ul>
+    <li><a href="/collections/animal">Animal</a></li>
+    <li><a href="/collections/back-to-school">Back to School</a></li>
+    <li><a href="/collections/boho">Boho</a></li>
+    <li><a href="/collections/christmas">Christmas</a></li>
+    <li><a href="/collections/easter">Easter</a></li>
+    <li><a href="/collections/fairytale">Fairytale</a></li>
+    <li><a href="/collections/floral">Floral</a></li>
+    <li><a href="/collections/food">Food</a></li>
+    <li><a href="/collections/general-shapes">General Shapes</a></li>
+    <li><a href="/collections/graduation">Graduation</a></li>
+    <li><a href="/collections/halloween"> Halloween</a></li>
+    <li><a href="/collections/mother-s-day">Mother’s Day</a></li>
+    <li><a href="/collections/nautical">Nautical</a></li>
+    <li><a href="/collections/new-year-s">New Year's</a></li>
+    <li><a href="/collections/pirate">Pirate</a></li>
+    <li><a href="/collections/plaques-banners-and-ribbons">Plaques, Banners, &amp; Ribbons</a></li>
+    <li><a href="/collections/st-patrick-s-day">St. Patrick’s Day</a></li>
+    <li><a href="/collections/summer">Summer</a></li>
+    <li><a href="/collections/thanksgiving">Thanksgiving</a></li>
+    <li><a href="/collections/valentine-s-day">Valentine’s Day</a></li>
+    <li><a href="/collections/wedding">Wedding</a></li>
+  </ul>
 
-    <script>
-    $(function() {
-      var filters = $('.advanced-filter'),
-        el,
-        elGroup,
-        elHandle,
-        activeTagInGroup;
+  <h2 class="h3">Decorating Supplies</h2>
+  <ul>
+    <li><a href="/collections/clear-bags">Clear Bags</a></li>
+    <li><a href="/collections/decorating-bottles">Decorating Bottles</a></li>
+    <li><a href="/collections/icing-tips">Icing Tips</a></li>
+    <li><a href="/collections/scribe-tools">Scribe Tools</a></li>
+  </ul>
 
-      filters.on('click', function(e) {
-        el = $(this);
-        elGroup = el.data('group');
-        elHandle = el.data('handle');
-        activeTagInGroup = $('.active-filter[data-group="'+ elGroup +'"]');
-        // If the tag clicked is not already active and its group contains an active tag, we will swap tag within the group.
-        if ( !el.hasClass('active-filter')  && activeTagInGroup.size() ) {
-          e.preventDefault();
-          location.href = location.href
-            // swap tag
-            .replace(activeTagInGroup.data('handle'), elHandle)
-            // go back to page 1
-            .replace(/(&page=\d+)|(page=\d+&)|(\?page=\d+$)/, '');
-        }
-      });
-    });
-    </script>
+  <h2 class="h3">Lapel Pins</h2>
+  <ul>
+    <li><a href="/collections/lapel-pins">Baking Pins</a></li>
+  </ul>
 
-  {% endif %}
+  <h2 class="h3">Stencils</h2>
+  <ul>
+    <li><a href="/collections/stencils">All</a></li>
+    <li><a href="/collections/stencils/easter">Easter</a></li>
+    <li><a href="/collections/stencils/graduation">Graduation</a></li>
+  </ul>
+
+
 {% else %}
   <h2 class="h3">{{ 'collections.sidebar.shop_by' | t }}</h2>
   {% if template.name == 'collection' and collection.all_tags.size > 0 %}
