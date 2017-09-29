@@ -58,8 +58,102 @@
       "share_pinterest":true,
       "superscript_decimals":true,
       "collection_sidebar_filters":"tags",
+      "sections":{
+         "header":{
+            "type":"header",
+            "settings":{
+               "menu":"main-menu",
+               "logo":"",
+               "logo_max_width":"305",
+               "show_announcement":false,
+               "announcement_text":"Announce something here",
+               "announcement_link":""
+            }
+         },
+         "footer":{
+            "type":"footer",
+            "settings":{
+               "social_enabled":false,
+               "legal_menu":""
+            }
+         },
+         "collection-template":{
+            "type":"collection-template",
+            "settings":{
+               "grid":"4",
+               "rows":"6",
+               "collection_sidebar_filters":"groups",
+               "product_show_compare_at_price":false,
+               "product_show_saved_amount":true,
+               "product_reviews_enable":false
+            }
+         },
+         "1506649128847":{
+            "type":"slideshow",
+            "blocks":{
+               "1506649128847-0":{
+                  "type":"image",
+                  "settings":{
+                     "slide":"shopify:\/\/shop_images\/crafted-cookie-cutter-header.png",
+                     "link":"shopify:\/\/collections\/all"
+                  }
+               }
+            },
+            "block_order":[
+               "1506649128847-0"
+            ],
+            "settings":{
+               "slider_home_auto":false,
+               "slider_home_rate":"5000"
+            }
+         },
+         "1506649218273":{
+            "type":"collection-rows",
+            "settings":{
+               "title":"Cookie Cutters",
+               "home_featured_row":"cookie-cutter",
+               "grid":4,
+               "rows":1,
+               "product_show_saved_amount":true,
+               "product_show_compare_at_price":false
+            }
+         },
+         "1506649244621":{
+            "type":"image-with-text",
+            "settings":{
+               "image":"shopify:\/\/shop_images\/cookie-pins-hero_9e41a85f-5a28-4deb-975c-64952da06b17.png",
+               "layout":"left",
+               "title":"Enamel Cookie Pins",
+               "text":"<p>Baking-themed lapel pins now available! These lapel pins add a dash of swagger and a pinch of awesome to your apron, bulletin board, or lapel of choice.<\/p>",
+               "button_label":"Buy Now",
+               "button_link":"shopify:\/\/collections\/lapel-pins"
+            }
+         },
+         "1506649302999":{
+            "type":"collection-rows",
+            "settings":{
+               "title":"Stencils",
+               "home_featured_row":"stencils",
+               "grid":4,
+               "rows":1,
+               "product_show_saved_amount":true,
+               "product_show_compare_at_price":false
+            }
+         },
+         "1506649333722":{
+            "type":"newsletter",
+            "settings":{
+               "heading":"Stay in the Mix",
+               "subtext":"Subscribe to the Newsletter for promotions, new products and sales. Directly to your inbox."
+            }
+         }
+      },
       "content_for_index":[
-
+         "1506649128847",
+         "1506649218273",
+         "1506649244621",
+         "1506649302999",
+         "1506649333722"
       ]
    },
    "presets":{
