@@ -5,7 +5,7 @@
   <meta itemprop="url" content="{{ shop.url }}{{ product.url }}">
   <meta itemprop="image" content="{{ product.featured_image.src | img_url: 'grande' }}">
 
-  <div class="grid-item large--two-fifths">
+  <div class="grid-item large--one-half">
     <div class="grid">
       <div class="grid-item large--eleven-twelfths text-center">
         <div class="product-photo-container" id="productPhotoContainer-{{ section.id }}">
@@ -56,9 +56,19 @@
     </div>
   </div>
 
-  <div class="grid-item large--three-fifths">
+  <div class="grid-item large--one-half">
 
     <h1 class="h2" itemprop="name">{{ product.title }}</h1>
+    {% comment %}
+      Show Metafields
+    {% endcomment %}
+    {% assign dimensions = product.metafields.dimensions %}
+    {% assign key = 'size' %}
+    {% if product.metafields.dimensions != blank %}
+    <div class="metafields-box">
+      {{ dimensions[key] }}
+    </div>
+    {% endif %}
 
     {% if section.settings.product_vendor_enable %}
       <p class="product-meta" itemprop="brand">{{ product.vendor }}</p>
@@ -92,8 +102,6 @@
           </li>
         {% endif %}
       </ul>
-
-      <hr id="variantBreak" class="hr--clear hr--small">
 
       <link itemprop="availability" href="http://schema.org/{% if product.available %}InStock{% else %}OutOfStock{% endif %}">
 
