@@ -2,7 +2,7 @@
 
 {% unless template.name == 'index' or template.name == 'cart' %}
 <nav class="breadcrumb" role="navigation" aria-label="breadcrumbs">
-  <a href="/" title="{{ 'general.breadcrumbs.home_link_title' | t }}">{{ 'general.breadcrumbs.home' | t }}</a>
+  <a href="/collections/all?sort_by=created-descending" title="Shop Home">Shop</a>
 
   {% if template.name == 'product' %}
 
