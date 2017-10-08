@@ -18,7 +18,13 @@
   {% endif %}
 
   <div class="grid-item{% if has_sidebar %} large--four-fifths grid-border--left{% endif %}">
-
+    {% if section.settings.banner_image %}
+    <div id="store-banner">
+      <img src="{{ section.settings.banner_image | img_url: '905x120', scale: 2 }}"
+           data-src="{{ section.settings.banner_image | img_url: '905x120', scale: 2 }}"
+           alt="{{ section.settings.banner_image.alt | escape }}">
+    </div>
+    {% endif %}
     {% comment %}
       Different markup if description is set
     {% endcomment %}
@@ -203,6 +209,12 @@
         "id": "product_reviews_enable",
         "label": "Enable product reviews",
         "info": "Install the free Shopify [Product Reviews](https:\/\/apps.shopify.com\/product-reviews) app to add product reviews."
+      },
+      {
+        "type": "image_picker",
+        "id": "banner_image",
+        "label": "Banner Image",
+        "info": "Add a banner to the top of the store."
       }
     ]
   }

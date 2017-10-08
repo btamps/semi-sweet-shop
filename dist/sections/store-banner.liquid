@@ -1,0 +1,24 @@
+<div id="store-banner">
+  <img src="{{ section.settings.image | img_url }}"
+       data-src="{{ section.settings.image | img_url }}"
+       alt="{{ section.settings.image.alt | escape }}">
+</div>
+
+{% schema %}
+{
+  "name": "Store banner",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Store banner",
+      "category": "Banner Image"
+    }
+  ]
+}
+{% endschema %}
