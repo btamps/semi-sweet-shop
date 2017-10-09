@@ -187,15 +187,32 @@ body {
   background-color: $blue;
 }
 
+/*================ Product Details Styles ================*/
 .metafields-box {
   margin: 20px 0;
   h3 {
-    color: $chocolate;
+    color: #2f2f2f;
   }
   p {
     color: $chocolate;
     font-size: 18px;
     margin-bottom: 5px;
+  }
+}
+
+h1.h2.product-title {
+  font-size: 1.75em;
+}
+
+.product-description {
+  p {
+    color: #777;
+  }
+  a {
+    color: $red;
+    &:hover {
+      text-decoration: underline;
+    }
   }
 }
 
