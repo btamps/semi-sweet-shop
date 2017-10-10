@@ -12,7 +12,11 @@ $red-dark: #F44336;
 $red-disabled: #FFCDD2;
 $blue: #78B6D7;
 $blue-dark: #1C8FCD;
+$blue-text-dark: #39557d;
 $blue-lite: hsla(0,0,100,.5);
+$blue-bg-lite: #eaf4f9;
+$blue-bg-medium: rgba(87, 171, 217, .5);
+$blue-bg-dark: #57abd9;
 $cream: #F5F2F0;
 $cream-dark: #EFEBE9;
 $choco: #CDBFBA;
@@ -78,7 +82,7 @@ body {
   height: 40px;
   .nav-social {
     margin: 0;
-    max-width: 1200px;
+    max-width: 1160px;
     margin: 0 auto;
     text-align: right;
     &:before {
@@ -187,6 +191,14 @@ body {
   background-color: $blue;
 }
 
+#store-banner {
+  margin: 0 0 20px;
+  text-align: center;
+  img {
+    width: 100%;
+    max-width: 700px;
+  }
+}
 /*================ Product Details Styles ================*/
 .metafields-box {
   margin: 20px 0;
@@ -213,6 +225,106 @@ h1.h2.product-title {
     &:hover {
       text-decoration: underline;
     }
+  }
+}
+
+/*================ Footer Styles ================*/
+.newsletter-box {
+  background: $blue-bg-lite;
+  padding: 40px 0;
+  color: $blue-text-dark;
+  .newsletter-icon {
+    max-width: 208px;
+    margin-bottom: 10px;
+  }
+  h3 {
+    text-indent: -200%;
+    background: url(subscribe-to-the-newsletter.svg) top center no-repeat;
+    max-width: 335px;
+    margin: 10px auto 20px;
+  }
+  p {
+    font-size: 1.15em;
+  }
+  form {
+    max-width: 500px;
+    margin: 20px auto;
+    position: relative;
+    .email.form-control {
+      background: white;
+      border-color: $blue-bg-medium;
+      border-radius: 3px;
+      padding: 8px 10px;
+      color: $blue-text-dark;
+      & {
+    		&::-webkit-input-placeholder {
+    		  color: $blue-bg-medium; }
+
+    		&:-moz-placeholder {
+    		  /* Firefox 18- */
+    		  color: $blue-bg-medium; }
+
+    		&::-moz-placeholder {
+    		  /* Firefox 19+ */
+    		  color: $blue-bg-medium; }
+
+    		&:-ms-input-placeholder {
+    		  color: $blue-bg-medium; }
+      }
+    }
+    button {
+      position: absolute;
+      right: 10px;
+      top: 0;
+      color: $blue-bg-dark;
+      background: transparent;
+      font-size: 24px;
+      padding: 0;
+      &:hover {
+        background-color: transparent;
+        color: $blue-bg-medium;
+      }
+    }
+  }
+}
+.footer--menu {
+  background: $blue-bg-medium;
+  padding: 40px 0;
+  .logo img {
+    max-width: 200px;
+  }
+  p, a, h4 {
+    color: $blue-text-dark;
+  }
+  a:hover {
+    color: white;
+  }
+  .nav-social {
+    li {
+      display: inline-block;
+      text-align: center;
+      margin-right: 6px;
+      a {
+        background: white;
+        border-radius: 2em;
+        width: 32px;
+        height: 32px;
+        line-height: 32px;
+        display: inline-block;
+        &:hover {
+          background-color: $blue-bg-dark;
+        }
+      }
+    }
+  }
+}
+.footer--legal-bar {
+  padding: 10px 0;
+  background: $blue-bg-dark;
+  color: $blue-text-dark;
+  .payment-icons li,
+  a {
+    color: $blue-text-dark;
   }
 }
 
